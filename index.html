@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL NINO GREEN MARATHON 2026</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#071b13;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 6%;
+  background:rgba(3,20,14,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+  font-size:20px;
+  font-weight:900;
+  color:#b8ff45;
+  letter-spacing:1px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  margin-left:20px;
+}
+
+.nav-btn{
+  background:#b8ff45;
+  color:#062014 !important;
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(184,255,69,.25),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(0,255,170,.18),transparent 30%),
+    linear-gradient(135deg,#06251a,#07130f 65%,#123b25);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(184,255,69,.2);
+  border-radius:50%;
+  right:-170px;
+  top:-100px;
+}
+
+.hero-content{
+  max-width:950px;
+  position:relative;
+  z-index:2;
+}
+
+.badge{
+  display:inline-block;
+  padding:9px 18px;
+  border:1px solid #b8ff45;
+  border-radius:50px;
+  color:#b8ff45;
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(45px,10vw,100px);
+  line-height:.92;
+  font-weight:1000;
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:#b8ff45;
+}
+
+.hero p{
+  margin:25px auto;
+  max-width:650px;
+  font-size:18px;
+  color:#cde2d5;
+  line-height:1.6;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  text-decoration:none;
+  padding:15px 28px;
+  border-radius:40px;
+  font-weight:800;
+  display:inline-block;
+}
+
+.primary{
+  background:#b8ff45;
+  color:#062014;
+}
+
+.secondary{
+  border:1px solid rgba(255,255,255,.3);
+  color:white;
+}
+
+/* EVENT STRIP */
+.event-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  background:#b8ff45;
+  color:#071b13;
+  text-align:center;
+}
+
+.event-item{
+  padding:22px 10px;
+  border-right:1px solid rgba(0,0,0,.15);
+}
+
+.event-item strong{
+  display:block;
+  font-size:20px;
+}
+
+.event-item small{
+  font-weight:bold;
+}
+
+/* SECTION */
+section{
+  padding:80px 6%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:42px;
+}
+
+.section-title span{
+  color:#b8ff45;
+}
+
+.section-title p{
+  color:#9eb9aa;
+  margin-top:10px;
+}
+
+/* COUNTDOWN */
+.countdown{
+  background:linear-gradient(135deg,#123b25,#0a2118);
+}
+
+.timer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  max-width:800px;
+  margin:auto;
+}
+
+.time-box{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(184,255,69,.2);
+  border-radius:20px;
+  padding:25px 10px;
+  text-align:center;
+}
+
+.time-box b{
+  font-size:42px;
+  color:#b8ff45;
+  display:block;
+}
+
+.time-box small{
+  color:#b5cabe;
+}
+
+/* CHIEF GUEST */
+.guest-card{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:35px;
+  padding:35px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#102e20,#0a1c15);
+  border:1px solid rgba(184,255,69,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.guest-photo{
+  min-width:180px;
+  height:220px;
+  border-radius:25px;
+  background:
+    linear-gradient(135deg,#b8ff45,#19c879);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#062014;
+  font-weight:900;
+  text-align:center;
+  padding:20px;
+}
+
+.guest-info small{
+  color:#b8ff45;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.guest-info h3{
+  font-size:35px;
+  margin:10px 0;
+}
+
+.guest-info p{
+  color:#b5cabe;
+  line-height:1.7;
+}
+
+/* CATEGORIES */
+.categories{
+  background:#06150f;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card{
+  padding:25px 18px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#102d20,#0a1b14);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#b8ff45;
+}
+
+.card .distance{
+  font-size:30px;
+  font-weight:900;
+  color:#b8ff45;
+}
+
+.card h3{
+  margin:8px 0;
+  font-size:17px;
+}
+
+.card p{
+  color:#9eb9aa;
+}
+
+.price{
+  margin-top:15px;
+  font-weight:bold;
+  color:#fff;
+}
+
+/* VENUE */
+.venue{
+  text-align:center;
+  background:
+    radial-gradient(circle at center,rgba(184,255,69,.12),transparent 45%),
+    #071b13;
+}
+
+.venue-box{
+  max-width:850px;
+  margin:auto;
+  padding:40px;
+  border-radius:30px;
+  border:1px solid rgba(184,255,69,.25);
+  background:rgba(255,255,255,.04);
+}
+
+.venue-box h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.venue-box p{
+  color:#b5cabe;
+  line-height:1.8;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#b8ff45,#55e68b);
+  color:#062014;
+}
+
+.cta h2{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  margin-bottom:25px;
+  font-weight:bold;
+}
+
+.cta .btn{
+  background:#062014;
+  color:#b8ff45;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:35px 20px;
+  background:#030c08;
+  color:#789183;
+  font-size:13px;
+}
+
+footer strong{
+  color:#b8ff45;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  nav a:not(.nav-btn){
+    display:none;
+  }
+
+  .event-strip{
+    grid-template-columns:1fr;
+  }
+
+  .event-item{
+    border-right:0;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+
+  .timer{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .guest-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .guest-photo{
+    width:180px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+}
+
+@media(max-width:450px){
+  section{
+    padding:60px 18px;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:85vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">EL NINO 🌿</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#categories">Categories</a>
+    <a href="#venue">Venue</a>
+    <a class="nav-btn" href="#register">REGISTER</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+
+    <div class="badge">🌿 RUN FOR A GREENER TOMORROW</div>
+
+    <h1>
+      EL NINO<br>
+      <span>GREEN</span> MARATHON
+    </h1>
+
+    <p>
+      Coimbatore's colourful celebration of running, fitness,
+      community and a greener future.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn primary" href="#register">REGISTER NOW →</a>
+      <a class="btn secondary" href="#categories">EXPLORE RACE</a>
+    </div>
+
+  </div>
+</header>
+
+<div class="event-strip">
+  <div class="event-item">
+    <strong>11 OCT 2026</strong>
+    <small>SUNDAY</small>
+  </div>
+
+  <div class="event-item">
+    <strong>06:00 AM</strong>
+    <small>START TIME</small>
+  </div>
+
+  <div class="event-item">
+    <strong>COIMBATORE</strong>
+    <small>TAMIL NADU</small>
+  </div>
+</div>
+
+<section class="countdown" id="about">
+
+  <div class="section-title">
+    <h2>THE RUN <span>BEGINS IN</span></h2>
+    <p>Get ready. Lace up. Let's run!</p>
+  </div>
+
+  <div class="timer">
+    <div class="time-box">
+      <b id="days">00</b>
+      <small>DAYS</small>
+    </div>
+
+    <div class="time-box">
+      <b id="hours">00</b>
+      <small>HOURS</small>
+    </div>
+
+    <div class="time-box">
+      <b id="minutes">00</b>
+      <small>MINUTES</small>
+    </div>
+
+    <div class="time-box">
+      <b id="seconds">00</b>
+      <small>SECONDS</small>
+    </div>
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>MEET OUR <span>CHIEF GUEST</span></h2>
+    <p>A special presence for a special run.</p>
+  </div>
+
+  <div class="guest-card">
+
+    <div class="guest-photo">
+      CHIEF GUEST<br>
+      PHOTO
+    </div>
+
+    <div class="guest-info">
+      <small>CHIEF GUEST</small>
+      <h3>Annamalai IPS</h3>
+      <p>
+        EL NINO GREEN MARATHON 2026 —
+        celebrating fitness, determination and the spirit of running.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="categories" id="categories">
+
+  <div class="section-title">
+    <h2>CHOOSE YOUR <span>RACE</span></h2>
+    <p>There is a distance for everyone.</p>
+  </div>
+
+  <div class="category-grid">
+
+    <div class="card">
+      <div class="distance">12 KM</div>
+      <h3>Open Men</h3>
+      <p>14+ Years</p>
+      <div class="price">₹500</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">8 KM</div>
+      <h3>Women</h3>
+      <p>14+ Years</p>
+      <div class="price">₹500</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">8 KM</div>
+      <h3>Men 50+</h3>
+      <p>50+ Years</p>
+      <div class="price">₹500</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">6 KM</div>
+      <h3>Men</h3>
+      <p>14+ Years</p>
+      <div class="price">₹450</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">4 KM</div>
+      <h3>Junior Run</h3>
+      <p>12–14 Years</p>
+      <div class="price">₹400</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">3 KM</div>
+      <h3>Junior Run</h3>
+      <p>10–12 Years</p>
+      <div class="price">₹400</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">2 KM</div>
+      <h3>Kids Run</h3>
+      <p>8–10 Years</p>
+      <div class="price">₹400</div>
+    </div>
+
+    <div class="card">
+      <div class="distance">1 KM</div>
+      <h3>Kids Run</h3>
+      <p>Below 8 Years</p>
+      <div class="price">₹400</div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="venue" id="venue">
+
+  <div class="section-title">
+    <h2>RACE <span>VENUE</span></h2>
+  </div>
+
+  <div class="venue-box">
+    <h3>📍 K K VITHYALA MATRIC HR SEC SCHOOL</h3>
+
+    <p>
+      Kadivattiplayam,<br>
+      Coimbatore, Tamil Nadu
+    </p>
+
+    <br>
+
+    <strong>🗓 11 October 2026 — Sunday</strong><br>
+    <strong>⏰ 6:00 AM</strong>
+  </div>
+
+</section>
+
+<section class="cta" id="register">
+
+  <h2>READY TO RUN? 🏃‍♀️🏃</h2>
+
+  <p>
+    Your journey starts with one decision.
+  </p>
+
+  <a class="btn" href="#">
+    REGISTER NOW →
+  </a>
+
+</section>
+
+<footer>
+  <p>
+    © 2026 <strong>EL NINO GREEN MARATHON</strong>
+  </p>
+  <p>
+    Run • Inspire • Go Green 🌿
+  </p>
+</footer>
+
+<script>
+
+const raceDate = new Date("October 11, 2026 06:00:00").getTime();
+
+function countdown(){
+
+  const now = new Date().getTime();
+  const distance = raceDate - now;
+
+  if(distance <= 0){
+    document.getElementById("days").innerText="00";
+    document.getElementById("hours").innerText="00";
+    document.getElementById("minutes").innerText="00";
+    document.getElementById("seconds").innerText="00";
+    return;
+  }
+
+  const days = Math.floor(distance/(1000*60*60*24));
+  const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+  const seconds = Math.floor((distance%(1000*60))/1000);
+
+  document.getElementById("days").innerText=String(days).padStart(2,"0");
+  document.getElementById("hours").innerText=String(hours).padStart(2,"0");
+  document.getElementById("minutes").innerText=String(minutes).padStart(2,"0");
+  document.getElementById("seconds").innerText=String(seconds).padStart(2,"0");
+}
+
+countdown();
+setInterval(countdown,1000);
+
+</script>
+
+</body>
+  </html>
