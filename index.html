@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EL NINO GREEN MARATHON 2026</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#071a12;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#0c6b45;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.25;
+    top:-200px;
+    right:-200px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#58d68d;
+    border-radius:50%;
+    filter:blur(150px);
+    opacity:.10;
+    bottom:-150px;
+    left:-150px;
+    z-index:-1;
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 20px;
+    background:rgba(4,20,13,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:16px;
+    font-weight:900;
+    color:#72f0a8;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.nav-links a:hover{
+    color:#72f0a8;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:100vh;
+    padding:120px 20px 70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.leaf{
+    position:absolute;
+    font-size:70px;
+    opacity:.12;
+}
+
+.leaf1{top:130px;left:5%;}
+.leaf2{bottom:80px;right:5%;font-size:90px;}
+.leaf3{top:45%;right:2%;font-size:55px;}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid #4fd98c;
+    border-radius:30px;
+    color:#72f0a8;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:clamp(42px,9vw,82px);
+    line-height:.95;
+    font-weight:1000;
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#72f0a8;
+}
+
+.hero-sub{
+    font-size:16px;
+    color:#b7cfc3;
+    margin-bottom:28px;
+}
+
+.event-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.info-box{
+    padding:13px 17px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;
+    font-size:13px;
+}
+
+.info-box strong{
+    color:#72f0a8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    border:none;
+    padding:15px 25px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:900;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#72f0a8;
+    color:#062013;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:white;
+    border:1px solid #72f0a8;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title small{
+    color:#72f0a8;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:32px;
+    margin-top:8px;
+}
+
+/* ---------- ABOUT ---------- */
+
+.about-card{
+    background:linear-gradient(135deg,rgba(31,102,69,.45),rgba(255,255,255,.04));
+    border:1px solid rgba(114,240,168,.18);
+    border-radius:25px;
+    padding:30px;
+    line-height:1.8;
+    color:#c9ddd3;
+}
+
+.about-card strong{
+    color:#72f0a8;
+}
+
+/* ---------- BENEFITS ---------- */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.benefit{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.benefit:hover{
+    transform:translateY(-5px);
+    border-color:#72f0a8;
+}
+
+.benefit-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.benefit h3{
+    font-size:14px;
+}
+
+/* ---------- VENUE ---------- */
+
+.location-card{
+    text-align:center;
+    padding:35px 20px;
+    background:rgba(255,255,255,.05);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.location-card h3{
+    color:#72f0a8;
+    margin-bottom:10px;
+}
+
+.location-card p{
+    color:#c8d8d0;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+/* ---------- MODAL ---------- */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(12px);
+    z-index:2000;
+    display:none;
+    overflow-y:auto;
+    padding:70px 15px 30px;
+}
+
+.modal.active{
+    display:block;
+}
+
+.modal-box{
+    max-width:900px;
+    margin:auto;
+    background:#092117;
+    border:1px solid rgba(114,240,168,.25);
+    border-radius:25px;
+    padding:25px;
+    position:relative;
+    animation:pop .25s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(.94);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:12px;
+    font-size:30px;
+    cursor:pointer;
+    color:#72f0a8;
+}
+
+.modal-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.modal-title h2{
+    color:#72f0a8;
+    margin-bottom:8px;
+}
+
+/* ---------- CATEGORIES ---------- */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.category{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:18px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.category:hover,
+.category.selected{
+    border-color:#72f0a8;
+    background:rgba(114,240,168,.10);
+}
+
+.category h3{
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.category p{
+    color:#9fb8ab;
+    font-size:12px;
+}
+
+.fee{
+    float:right;
+    color:#72f0a8;
+    font-weight:bold;
+}
+
+/* ---------- FORM ---------- */
+
+.form-box{
+    margin-top:25px;
+    display:none;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:25px;
+}
+
+.form-box.show{
+    display:block;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+input,select{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);
+    background:#06160e;
+    color:white;
+    outline:none;
+}
+
+input:focus,select:focus{
+    border-color:#72f0a8;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.selected-category{
+    color:#72f0a8;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+/* ---------- PRIZES ---------- */
+
+.prize-total{
+    text-align:center;
+    background:linear-gradient(135deg,#155c3b,#0b3020);
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.prize-total small{
+    color:#b7d7c5;
+}
+
+.prize-total h2{
+    color:#72f0a8;
+    font-size:36px;
+    margin-top:5px;
+}
+
+.prize-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:12px;
+}
+
+.prize-card h3{
+    color:#72f0a8;
+    margin-bottom:12px;
+}
+
+.prize-row{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    color:#d3e2db;
+    border-bottom:1px solid rgba(255,255,255,.04);
+}
+
+.prize-row:last-child{
+    border-bottom:none;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    color:#78988a;
+    font-size:12px;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px){
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:10px;
+    }
+
+    .logo{
+        font-size:13px;
+    }
+
+    .hero{
+        padding-top:110px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .modal-box{
+        padding:22px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="nav-inner">
+
+<div class="logo">🌿 EL NINO 2026</div>
+
+<div class="nav-links">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#location">LOCATION</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<main id="home">
+
+<div class="hero">
+
+<div class="leaf leaf1">🌿</div>
+<div class="leaf leaf2">🌳</div>
+<div class="leaf leaf3">🍃</div>
+
+<div class="hero-content">
+
+<div class="badge">🌎 RUN FOR THE PLANET</div>
+
+<h1>
+EL NINO<br>
+<span>GREEN MARATHON</span>
+</h1>
+
+<p class="hero-sub">
+Run • Raise Awareness • Protect Our Planet
+</p>
+
+<div class="event-info">
+
+<div class="info-box">
+📅 <strong>11 OCTOBER 2026</strong>
+</div>
+
+<div class="info-box">
+⏰ <strong>5:30 AM</strong>
+</div>
+
+<div class="info-box">
+📍 <strong>COIMBATORE</strong>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="btn btn-primary" onclick="openRegister()">
+REGISTER NOW →
+</button>
+
+<button class="btn btn-secondary" onclick="openPrizes()">
+🏆 PRIZE CATEGORIES
+</button>
+
+<button class="btn btn-secondary" onclick="openLocation()">
+📍 LOCATION
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+<small>ABOUT THE EVENT</small>
+<h2>Why EL NINO Green Marathon?</h2>
+</div>
+
+<div class="about-card">
+
+<p>
+<strong>EL NINO GREEN MARATHON 2026</strong> is an awareness-driven running event
+organized to bring people together through sport while creating awareness about
+climate change and the environmental impact associated with El Niño.
+</p>
+
+<br>
+
+<p>
+Through running, we aim to encourage a healthier lifestyle, environmental
+responsibility and a stronger connection between our community and nature.
+Every step is a reminder that a healthier planet starts with responsible action.
+</p>
+
+<br>
+
+<p>
+Organized by <strong>Pasumai Ingraarangal</strong>, the event welcomes runners
+and young participants to run together for a greener future.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section>
+
+<div class="section-title">
+<small>FOR EVERY PARTICIPANT</small>
+<h2>What You Get</h2>
+</div>
+
+<div class="benefits">
+
+<div class="benefit">
+<div class="benefit-icon">👕</div>
+<h3>Event T-Shirt</h3>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🏅</div>
+<h3>Finisher Medal</h3>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">📜</div>
+<h3>Certificate</h3>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🥤</div>
+<h3>Refreshments</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section id="location">
+
+<div class="section-title">
+<small>RACE VENUE</small>
+<h2>Where We Run</h2>
+</div>
+
+<div class="location-card">
+
+<h3>K K Vidhyalaya Matric Higher. Sec. School</h3>
+
+<p>
+Secondary School in Kaduvettipalayam,<br>
+Coimbatore, Tamil Nadu
+</p>
+
+<button class="btn btn-primary" onclick="openLocation()">
+📍 VIEW LOCATION
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- REGISTER MODAL -->
+
+<div class="modal" id="registerModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeAll()">×</span>
+
+<div class="modal-title">
+<h2>🏃 REGISTER NOW</h2>
+<p>Select your running category</p>
+</div>
+
+<div class="category-grid">
+
+<div class="category" onclick="selectCategory(this,'14 KM – Open Men','₹500')">
+<span class="fee">₹500</span>
+<h3>14 KM – Open Men</h3>
+<p>Open Category</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'10 KM – 14+ Women','₹500')">
+<span class="fee">₹500</span>
+<h3>10 KM – 14+ Women</h3>
+<p>14 years and above</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'10 KM – 45+ Men','₹500')">
+<span class="fee">₹500</span>
+<h3>10 KM – 45+ Men</h3>
+<p>45 years and above</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'7 KM – Men (14+)','₹450')">
+<span class="fee">₹450</span>
+<h3>7 KM – Men (14+)</h3>
+<p>14 years and above</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'4 KM – 12–14 Boys','₹400')">
+<span class="fee">₹400</span>
+<h3>4 KM – 12–14 Boys</h3>
+<p>12 to 14 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'4 KM – 12–14 Girls','₹400')">
+<span class="fee">₹400</span>
+<h3>4 KM – 12–14 Girls</h3>
+<p>12 to 14 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'3 KM – 10–12 Boys','₹400')">
+<span class="fee">₹400</span>
+<h3>3 KM – 10–12 Boys</h3>
+<p>10 to 12 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'3 KM – 10–12 Girls','₹400')">
+<span class="fee">₹400</span>
+<h3>3 KM – 10–12 Girls</h3>
+<p>10 to 12 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'2 KM – Boys (8–10 Years)','₹400')">
+<span class="fee">₹400</span>
+<h3>2 KM – Boys (8–10 Years)</h3>
+<p>8 to 10 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'2 KM – Girls (8–10 Years)','₹400')">
+<span class="fee">₹400</span>
+<h3>2 KM – Girls (8–10 Years)</h3>
+<p>8 to 10 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'1 KM – Boys (Below 8 Years)','₹400')">
+<span class="fee">₹400</span>
+<h3>1 KM – Boys (Below 8 Years)</h3>
+<p>Below 8 years</p>
+</div>
+
+<div class="category" onclick="selectCategory(this,'1 KM – Girls (Below 8 Years)','₹400')">
+<span class="fee">₹400</span>
+<h3>1 KM – Girls (Below 8 Years)</h3>
+<p>Below 8 years</p>
+</div>
+
+</div>
+
+
+<div class="form-box" id="formBox">
+
+<div class="selected-category" id="selectedCategory"></div>
+
+<div class="form-grid">
+
+<input type="text" placeholder="Participant Name">
+
+<input type="tel" placeholder="Mobile Number">
+
+<input type="email" placeholder="Email Address">
+
+<input type="number" placeholder="Age">
+
+<input type="text" placeholder="T-Shirt Size">
+
+<input type="text" placeholder="City">
+
+<input class="full" type="text" placeholder="Emergency Contact Number">
+
+</div>
+
+<br>
+
+<button class="btn btn-primary" style="width:100%;">
+CONTINUE TO PAYMENT →
+</button>
+
+<p style="text-align:center;color:#829d90;font-size:11px;margin-top:12px;">
+Payment integration can be connected after the registration details are finalized.
+</p>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- PRIZE MODAL -->
+
+<div class="modal" id="prizeModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeAll()">×</span>
+
+<div class="modal-title">
+<h2>🏆 PRIZE CATEGORIES</h2>
+<p>Compete. Achieve. Celebrate.</p>
+</div>
+
+<div class="prize-total">
+<small>TOTAL CASH PRIZE</small>
+<h2>₹2,10,000</h2>
+</div>
+
+
+<div class="prize-card">
+<h3>14 KM – Open Men</h3>
+<div class="prize-row"><span>1st</span><b>₹16,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹10,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹7,500</b></div>
+<div class="prize-row"><span>4th</span><b>₹5,000</b></div>
+<div class="prize-row"><span>5th</span><b>₹3,500</b></div>
+<div class="prize-row"><span>6th</span><b>₹2,500</b></div>
+<div class="prize-row"><span>7th</span><b>₹1,500</b></div>
+<div class="prize-row"><span>8th – 14th</span><b>₹1,000 each</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>10 KM – 14+ Women</h3>
+<div class="prize-row"><span>1st</span><b>₹10,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹7,500</b></div>
+<div class="prize-row"><span>3rd</span><b>₹5,000</b></div>
+<div class="prize-row"><span>4th</span><b>₹3,500</b></div>
+<div class="prize-row"><span>5th</span><b>₹2,500</b></div>
+<div class="prize-row"><span>6th</span><b>₹1,500</b></div>
+<div class="prize-row"><span>7th – 10th</span><b>₹1,000 each</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>10 KM – 45+ Men</h3>
+<div class="prize-row"><span>1st</span><b>₹10,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹6,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹5,000</b></div>
+<div class="prize-row"><span>4th</span><b>₹3,000</b></div>
+<div class="prize-row"><span>5th</span><b>₹2,000</b></div>
+<div class="prize-row"><span>6th – 10th</span><b>₹1,000 each</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>7 KM – Men (14+)</h3>
+<div class="prize-row"><span>1st</span><b>₹7,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹4,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹3,000</b></div>
+<div class="prize-row"><span>4th</span><b>₹2,000</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,500</b></div>
+<div class="prize-row"><span>6th – 10th</span><b>₹1,000 each</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>4 KM – 12–14 Boys</h3>
+<div class="prize-row"><span>1st</span><b>₹4,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,750</b></div>
+<div class="prize-row"><span>3rd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,500</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>4 KM – 12–14 Girls</h3>
+<div class="prize-row"><span>1st</span><b>₹4,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,750</b></div>
+<div class="prize-row"><span>3rd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,500</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>3 KM – 10–12 Boys</h3>
+<div class="prize-row"><span>1st</span><b>₹3,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,250</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>3 KM – 10–12 Girls</h3>
+<div class="prize-row"><span>1st</span><b>₹3,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,250</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>2 KM – Boys (8–10 Years)</h3>
+<div class="prize-row"><span>1st</span><b>₹2,500</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,250</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>2 KM – Girls (8–10 Years)</h3>
+<div class="prize-row"><span>1st</span><b>₹2,500</b></div>
+<div class="prize-row"><span>2nd</span><b>₹2,000</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,250</b></div>
+<div class="prize-row"><span>5th</span><b>₹1,000</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>1 KM – Boys (Below 8 Years)</h3>
+<div class="prize-row"><span>1st</span><b>₹2,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,250</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,000</b></div>
+<div class="prize-row"><span>5th</span><b>₹750</b></div>
+</div>
+
+
+<div class="prize-card">
+<h3>1 KM – Girls (Below 8 Years)</h3>
+<div class="prize-row"><span>1st</span><b>₹2,000</b></div>
+<div class="prize-row"><span>2nd</span><b>₹1,500</b></div>
+<div class="prize-row"><span>3rd</span><b>₹1,250</b></div>
+<div class="prize-row"><span>4th</span><b>₹1,000</b></div>
+<div class="prize-row"><span>5th</span><b>₹750</b></div>
+</div>
+
+</div>
+</div>
+
+
+<!-- LOCATION MODAL -->
+
+<div class="modal" id="locationModal">
+
+<div class="modal-box" style="text-align:center;">
+
+<span class="close" onclick="closeAll()">×</span>
+
+<div class="modal-title">
+<h2>📍 RACE VENUE</h2>
+</div>
+
+<h3 style="color:#72f0a8;">
+K K Vidhyalaya Matric Higher. Sec. School
+</h3>
+
+<p style="color:#b8cec4;line-height:1.7;margin:15px 0 25px;">
+Secondary School in Kaduvettipalayam,<br>
+Coimbatore, Tamil Nadu
+</p>
+
+<a
+class="btn btn-primary"
+target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=K+K+Vidhyalaya+Matric+Highe
