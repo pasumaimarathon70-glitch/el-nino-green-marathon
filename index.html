@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EL NINO GREEN MARATHON 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --green:#103d2c;
+  --green2:#1d6045;
+  --lime:#c4df45;
+  --cream:#f5f1e7;
+  --white:#fff;
+  --dark:#101713;
+  --muted:#69736d;
+  --gold:#c99a2e;
+  --line:#dde3dd;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+button,a{
+  font-family:inherit;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:20;
+  padding:22px 0;
+  color:white;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+}
+
+.logo{
+  width:48px;
+  height:48px;
+  border:2px solid rgba(255,255,255,.8);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.logo:before{
+  content:"";
+  position:absolute;
+  width:25px;
+  height:25px;
+  background:var(--lime);
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+}
+
+.logo i{
+  position:relative;
+  z-index:2;
+  color:var(--green);
+  font-size:14px;
+}
+
+.brand strong{
+  display:block;
+  font-family:Montserrat,sans-serif;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.brand span{
+  display:block;
+  font-size:10px;
+  opacity:.7;
+  letter-spacing:1.5px;
+  margin-top:3px;
+}
+
+.date-pill{
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  padding:10px 17px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:820px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+    radial-gradient(circle at 82% 35%,rgba(82,137,98,.55),transparent 27%),
+    linear-gradient(110deg,#071e15 0%,#12452f 52%,#0b2b1e 100%);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  border:1px solid rgba(196,223,69,.18);
+  border-radius:50%;
+  right:-230px;
+  top:90px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:50%;
+  right:-90px;
+  top:215px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  padding-top:80px;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--lime);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:4px;
+  margin-bottom:24px;
+}
+
+.eyebrow:before{
+  content:"";
+  width:42px;
+  height:2px;
+  background:var(--lime);
+}
+
+.hero h1{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(48px,7.5vw,98px);
+  line-height:.87;
+  letter-spacing:-4px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.hero h1 span{
+  color:var(--lime);
+  display:block;
+}
+
+/* COUNTDOWN TIMER STYLES */
+.countdown-container {
+  margin-top: 30px;
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(196, 223, 69, 0.3);
+  padding: 18px 24px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.countdown-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--lime);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer {
+  display: flex;
+  gap: 15px;
+}
+
+.time-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 70px;
+}
+
+.time-box span {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.time-box label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  margin-top: 5px;
+  display: block;
+}
+
+.hero-info{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+}
+
+.hero-info div{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+}
+
+.hero-info i{
+  color:var(--lime);
+}
+
+.location-text{
+  margin-top:13px;
+  font-size:12px;
+  color:rgba(255,255,255,.75);
+  max-width:650px;
+  line-height:1.6;
+}
+
+.location-text a{
+  color:rgba(255,255,255,.85);
+  text-decoration: underline;
+  transition: .2s;
+}
+
+.location-text a:hover{
+  color:var(--lime);
+}
+
+.location-text i{
+  color:var(--lime);
+  margin-right:5px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:35px;
+}
+
+.btn{
+  min-height:54px;
+  padding:0 24px;
+  border-radius:3px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  border:0;
+  background:var(--lime);
+  color:var(--green);
+}
+
+.outline{
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.04);
+  color:white;
+}
+
+.outline:hover{
+  background:white;
+  color:var(--green);
+}
+
+.hero-footer{
+  position:absolute;
+  bottom:25px;
+  left:0;
+  width:100%;
+  z-index:4;
+}
+
+.hero-line{
+  height:1px;
+  background:rgba(255,255,255,.15);
+}
+
+.hero-bottom{
+  display:flex;
+  justify-content:space-between;
+  padding-top:13px;
+  font-size:9px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.45);
+}
+
+/* ================= ABOUT ================= */
+
+.section{
+  padding:105px 0;
+}
+
+.about{
+  background:var(--cream);
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:70px;
+}
+
+.label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:var(--green2);
+  margin-bottom:17px;
+}
+
+.about h2{
+  font-family:Montserrat,sans-serif;
+  color:var(--green);
+  font-size:clamp(40px,5vw,66px);
+  line-height:.95;
+  letter-spacing:-3px;
+}
+
+.about-accent{
+  width:70px;
+  height:5px;
+  background:var(--lime);
+  margin-top:32px;
+}
+
+.about-text{
+  font-size:17px;
+  line-height:1.85;
+  color:#505a54;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits{
+  background:white;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.section-head h2{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(40px,5vw,65px);
+  line-height:.95;
+  letter-spacing:-3px;
+  color:var(--green);
+}
+
+.section-note{
+  max-width:350px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  overflow:hidden;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(15,54,38,.12);
+}
+
+.card-image{
+  height:210px;
+  position:relative;
+  overflow:hidden;
+  background:#103d2c;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.card:hover img{
+  transform:scale(1.07);
+}
+
+.card-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 40%,rgba(0,0,0,.45));
+}
+
+.icon{
+  position:absolute;
+  top:15px;
+  left:15px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--lime);
+  color:var(--green);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:2;
+  font-size:17px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card-content{
+  padding:22px;
+}
+
+.card-content h3{
+  font-family:Montserrat,sans-serif;
+  font-size:18px;
+  color:var(--green);
+  margin-bottom:7px;
+}
+
+.card-content p{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  background:var(--green);
+  color:white;
+  padding:90px 0;
+}
+
+.cta-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+
+.cta h2{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(40px,5vw,65px);
+  line-height:.95;
+  letter-spacing:-3px;
+}
+
+.cta h2 span{
+  color:var(--lime);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#0a2118;
+  color:white;
+  padding:55px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:45px;
+  padding-bottom:40px;
+}
+
+.footer-logo{
+  font-family:Montserrat,sans-serif;
+  font-size:23px;
+  font-weight:900;
+}
+
+.footer-logo span{
+  color:var(--lime);
+}
+
+.footer-desc{
+  color:rgba(255,255,255,.55);
+  font-size:12px;
+  line-height:1.7;
+  margin-top:12px;
+  max-width:380px;
+}
+
+.footer-title{
+  color:var(--lime);
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.footer-text{
+  color:rgba(255,255,255,.7);
+  font-size:13px;
+  line-height:1.9;
+}
+
+.footer-text i{
+  color:var(--lime);
+  width:20px;
+}
+
+.contact-link {
+  color: white;
+  transition: 0.2s;
+}
+
+.contact-link:hover {
+  color: var(--lime);
+}
+
+.location-link {
+  color: rgba(255,255,255,.8);
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.location-link:hover {
+  color: var(--lime);
+  text-decoration: underline;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.38);
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+/* ================= FULL SCREEN PAGE ================= */
+
+.page{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:var(--cream);
+  overflow-y:auto;
+}
+
+.page.show{
+  display:block;
+}
+
+.page-top{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:var(--green);
+  color:white;
+  padding:20px 0;
+}
+
+.page-top-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.page-title{
+  font-family:Montserrat,sans-serif;
+  font-size:21px;
+  font-weight:900;
+}
+
+.back{
+  border:1px solid rgba(255,255,255,.35);
+  background:transparent;
+  color:white;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.page-content{
+  padding:60px 0 100px;
+}
+
+.page-heading{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.page-heading .label{
+  margin-bottom:8px;
+}
+
+.page-heading h2{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(42px,6vw,70px);
+  letter-spacing:-4px;
+  color:var(--green);
+}
+
+/* ================= TABS ================= */
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:42px;
+}
+
+.tab{
+  padding:14px 35px;
+  border:1px solid var(--line);
+  background:white;
+  color:var(--green);
+  font-weight:900;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+
+.tab.active{
+  background:var(--green);
+  color:var(--lime);
+}
+
+.prize-tab{
+  display:none;
+}
+
+.prize-tab.active{
+  display:block;
+}
+
+/* ================= PRIZES ================= */
+
+.prize-box{
+  background:white;
+  border:1px solid var(--line);
+  margin-bottom:20px;
+  overflow:hidden;
+}
+
+.prize-heading{
+  background:var(--green);
+  color:white;
+  padding:19px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.prize-heading h3{
+  font-family:Montserrat,sans-serif;
+  font-size:16px;
+}
+
+.prize-heading span{
+  color:var(--lime);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.prize-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.prize-row{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 22px;
+  border-bottom:1px solid #edf0ec;
+  font-size:13px;
+}
+
+.prize-row strong{
+  color:var(--green);
+}
+
+.money{
+  color:var(--gold);
+  font-weight:900;
+}
+
+/* ================= REGISTRATION ================= */
+
+.form-wrap{
+  max-width:850px;
+  margin:auto;
+}
+
+.form-card{
+  background:white;
+  border:1px solid var(--line);
+  padding:40px;
+}
+
+.form-card h2{
+  font-family:Montserrat,sans-serif;
+  color:var(--green);
+  font-size:40px;
+  letter-spacing:-2px;
+  margin-bottom:8px;
+}
+
+.form-desc{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:32px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:var(--green);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  border:1px solid #d7ded8;
+  background:#fbfcfa;
+  padding:14px;
+  font-family:inherit;
+  font-size:14px;
+  outline:none;
+}
+
+.field textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--green2);
+}
+
+.submit{
+  width:100%;
+  border:0;
+  margin-top:25px;
+  padding:17px;
+  background:var(--green);
+  color:white;
+  font-weight:900;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+  .benefits-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-note{
+    margin-top:15px;
+  }
+
+  .cta-flex{
+    display:block;
+  }
+
+  .cta .btn{
+    margin-top:25px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:560px){
+  header{
+    padding:14px 0;
+  }
+
+  .date-pill{
+    display:none;
+  }
+
+  .brand strong{
+    font-size:10px;
+  }
+
+  .brand span{
+    font-size:8px;
+  }
+
+  .hero{
+    min-height:860px;
+  }
+
+  .hero h1{
+    font-size:45px;
+    letter-spacing:-2px;
+  }
+
+  .countdown-container {
+    padding: 12px 15px;
+  }
+
+  .timer {
+    gap: 8px;
+  }
+
+  .time-box {
+    min-width: 55px;
+    padding: 8px 10px;
+  }
+
+  .time-box span {
+    font-size: 20px;
+  }
+
+  .hero-info{
+    display:block;
+  }
+
+  .hero-info div{
+    margin-bottom:10px;
+  }
+
+  .hero-buttons{
+    display:grid;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .section{
+    padding:75px 0;
+  }
+
+  .benefits-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:auto;
+  }
+
+  .footer-bottom{
+    display:block;
+  }
+
+  .footer-bottom div+div{
+    margin-top:8px;
+  }
+
+  .prize-list{
+    grid-template-columns:1fr;
+  }
+
+  .form-card{
+    padding:25px 18px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .form-card h2{
+    font-size:31px;
+  }
+
+  .prize-heading{
+    display:block;
+  }
+
+  .prize-heading span{
+    display:block;
+    margin-top:6px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+
+<header>
+  <div class="container nav">
+
+    <a class="brand" href="#">
+      <div class="logo">
+        <i class="fa-solid fa-leaf"></i>
+      </div>
+      <div>
+        <strong>PASUMAI IYENGARGAL</strong>
+        <span>RUN • GREEN • INSPIRE</span>
+      </div>
+    </a>
+
+    <div class="date-pill">
+      11 OCTOBER 2026
+    </div>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      COIMBATORE • 2026
+    </div>
+
+    <h1>
+      EL NINO
+      <span>GREEN</span>
+      MARATHON
+    </h1>
+
+    <!-- MARATHON COUNTDOWN TIMER -->
+    <div class="countdown-container">
+      <div class="countdown-title">
+        <i class="fa-solid fa-stopwatch"></i> Countdown to Race Day (11 Oct 2026)
+      </div>
+      <div class="timer">
+        <div class="time-box"><span id="days">00</span><label>Days</label></div>
+        <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+        <div class="time-box"><span id="mins">00</span><label>Mins</label></div>
+        <div class="time-box"><span id="secs">00</span><label>Secs</label></div>
+      </div>
+    </div>
+
+    <div class="hero-info">
+      <div>
+        <i class="fa-regular fa-calendar"></i>
+        Sunday, 11 October 2026
+      </div>
+
+      <div>
+        <i class="fa-regular fa-clock"></i>
+        Start 5:30 AM
+      </div>
+    </div>
+
+    <div class="location-text">
+      <i class="fa-solid fa-location-dot"></i>
+      <a href="https://www.google.com/maps/search/?api=1&query=K+K+Vidhyalaya+Matric+Higher+Secondary+School%2C+Kaduvettipalayam%2C+Annur%2C+Coimbatore%2C+Tamil+Nadu" target="_blank" rel="noopener noreferrer">
+        K K Vidhyalaya Matric Higher. Sec. School, Kaduvettipalayam, Annur, Coimbatore, Tamil Nadu 📍
+      </a>
+    </div>
+
+    <div class="hero-buttons">
+
+      <button
+        class="btn primary"
+        onclick="openPage('registerPage')">
+        REGISTER NOW
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+      <button
+        class="btn outline"
+        onclick="openPage('prizePage')">
+        <i class="fa-solid fa-trophy"></i>
+        PRIZE DETAILS
+      </button>
+
+      <!-- DIRECT GOOGLE MAPS -->
+      <a
+        class="btn outline"
+        href="https://www.google.com/maps/search/?api=1&query=K+K+Vidhyalaya+Matric+Higher+Secondary+School%2C+Kaduvettipalayam%2C+Annur%2C+Coimbatore%2C+Tamil+Nadu"
+        target="_blank"
+        rel="noopener noreferrer">
+        <i class="fa-solid fa-location-dot"></i>
+        LOCATION
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-footer">
+    <div class="container">
+      <div class="hero-line"></div>
+      <div class="hero-bottom">
+        <span>FITNESS WITH A PURPOSE</span>
+        <span>RUN FOR A GREENER FUTURE</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="label">
+          ABOUT THE EVENT
+        </div>
+        <h2>
+          FITNESS<br>
+          WITH A<br>
+          PURPOSE.
+        </h2>
+        <div class="about-accent"></div>
+      </div>
+
+      <div>
+        <p class="about-text">
+          EL NINO GREEN MARATHON 2026 is a community-focused running event
+          inspired by the environmental impact of El Niño and the growing
+          need for awareness about climate change, rising temperatures,
+          water conservation and a greener future. Our mission is to connect
+          fitness with environmental responsibility by encouraging people
+          to stay healthy, understand climate challenges, conserve water,
+          protect nature and make sustainable choices. Through this marathon,
+          we aim to bring people of all ages together for fitness, awareness
+          and positive action towards a healthier and greener community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="section benefits">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="label">
+          PARTICIPANT BENEFITS
+        </div>
+        <h2>
+          MORE THAN<br>
+          JUST A RUN.
+        </h2>
+      </div>
+
+      <p class="section-note">
+        Every participant gets more than a race number.
+        Run, finish, celebrate and take home memories
+        from EL NINO GREEN MARATHON 2026.
+      </p>
+    </div>
+
+
+    <div class="benefits-grid">
+
+      <!-- T SHIRT -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85"
+            alt="Event T-Shirt">
+          <div class="icon">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Event T-Shirt</h3>
+          <p>
+            A specially designed high-performance event T-shirt for all registered participants.
+          </p>
+        </div>
+      </div>
+
+      <!-- MEDAL -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1725791244101-a083aa256194?auto=format&fit=crop&w=1000&q=85"
+            alt="Finisher Medal">
+          <div class="icon">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Finisher Medal</h3>
+          <p>
+            Finish your run and take home a commemorative green marathon medal.
+          </p>
+        </div>
+      </div>
+
+      <!-- CERTIFICATE -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=85"
+            alt="Achievement Certificate">
+          <div class="icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Certificate</h3>
+          <p>
+            An official certificate to proudly celebrate your marathon achievement.
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOD -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=85"
+            alt="Healthy Breakfast Food">
+          <div class="icon">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Healthy Food</h3>
+          <p>
+            Delicious & nutritious morning meal provided for participants after the run.
+          </p>
+        </div>
+      </div>
+
+      <!-- REFRESHMENTS -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=85"
+            alt="Refreshing Drinks">
+          <div class="icon">
+            <i class="fa-solid fa-glass-water"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Refreshments</h3>
+          <p>
+            Hydrating energy drinks and water points to keep you cool and energized.
+          </p>
+        </div>
+      </div>
+
+      <!-- MEDICAL FACILITY -->
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1000&q=85"
+            alt="Medical Facility Support">
+          <div class="icon">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Medical Support</h3>
+          <p>
+            On-field medical facility and ambulance support throughout the route.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+  <div class="container cta-flex">
+    <div>
+      <div class="label" style="color:var(--lime)">
+        YOUR RUN STARTS HERE
+      </div>
+      <h2>
+        READY TO<br>
+        <span>RUN GREEN?</span>
+      </h2>
+    </div>
+
+    <button
+      class="btn primary"
+      onclick="openPage('registerPage')">
+      JOIN THE RUN
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-logo">
+          EL NINO <span>GREEN MARATHON</span>
+        </div>
+        <p class="footer-desc">
+          Fitness, awareness and environmental responsibility —
+          bringing the community together for a healthier and greener future.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          ORGANISED BY
+        </div>
+        <div class="footer-text">
+          <strong>PASUMAI IYENGARGAL</strong>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          CONTACT & LOCATION
+        </div>
+
+        <div class="footer-text">
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:9597735733" class="contact-link"><strong>9597735733</strong></a> / 
+            <a href="tel:9597834694" class="contact-link"><strong>9597834694</strong></a>
+          </div>
+
+          <div style="margin-top:10px">
+            <i class="fa-solid fa-location-dot"></i>
+            <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=K+K+Vidhyalaya+Matric+Higher+Secondary+School%2C+Kaduvettipalayam%2C+Annur%2C+Coimbatore%2C+Tamil+Nadu" target="_blank" rel="noopener noreferrer">
+              K K Vidhyalaya Matric Higher. Sec. School, Kaduvettipalayam, Annur, Coimbatore 📍
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 EL NINO GREEN MARATHON
+      </div>
+      <div>
+        PASUMAI IYENGARGAL • COIMBATORE
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ================= PRIZE PAGE ================= -->
+
+<div class="page" id="prizePage">
+  <div class="page-top">
+    <div class="container page-top-inner">
+      <div class="page-title">
+        CASH PRIZE DETAILS
+      </div>
+      <button class="back" onclick="closePage()">
+        <i class="fa-solid fa-arrow-left"></i>
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="page-heading">
+        <div class="label">
+          EL NINO GREEN MARATHON 2026
+        </div>
+        <h2>PRIZE DETAILS</h2>
+      </div>
+
+      <div class="tabs">
+        <button
+          class="tab active"
+          onclick="switchPrize('adults',this)">
+          ADULTS
+        </button>
+        <button
+          class="tab"
+          onclick="switchPrize('kids',this)">
+          KIDS
+        </button>
+      </div>
+
+      <!-- ADULTS PRIZES -->
+      <div class="prize-tab active" id="adults">
+        <!-- 14 KM OPEN MEN -->
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>14 KM – OPEN MEN</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹16,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹10,000</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹7,500</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹5,000</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹3,500</span></div>
+            <div class="prize-row"><strong>6th Prize</strong><span class="money">₹2,500</span></div>
+            <div class="prize-row"><strong>7th Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>8th - 14th Prize</strong><span class="money">₹1,000 Each</span></div>
+          </div>
+        </div>
+
+        <!-- 10 KM WOMEN -->
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>10 KM – 14+ WOMEN</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹10,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹7,500</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹5,000</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹3,500</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹2,500</span></div>
+            <div class="prize-row"><strong>6th Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>7th - 10th Prize</strong><span class="money">₹1,000 Each</span></div>
+          </div>
+        </div>
+
+        <!-- 45+ MEN -->
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>10 KM – 45+ MEN</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹10,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹6,000</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹5,000</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹3,000</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>6th - 10th Prize</strong><span class="money">₹1,000 Each</span></div>
+          </div>
+        </div>
+
+        <!-- 7 KM MEN -->
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>7 KM – MEN (14+)</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹7,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹4,000</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹3,000</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>6th - 10th Prize</strong><span class="money">₹1,000 Each</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KIDS PRIZES -->
+      <div class="prize-tab" id="kids">
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>4 KM – 12–14 YEARS (BOYS & GIRLS)</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹4,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹2,750</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹1,000</span></div>
+          </div>
+        </div>
+
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>3 KM – 10–12 YEARS (BOYS & GIRLS)</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹3,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹1,250</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹1,000</span></div>
+          </div>
+        </div>
+
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>2 KM – 8–10 YEARS (BOYS & GIRLS)</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹2,500</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹1,250</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹1,000</span></div>
+          </div>
+        </div>
+
+        <div class="prize-box">
+          <div class="prize-heading">
+            <h3>1 KM – BELOW 8 YEARS (BOYS & GIRLS)</h3>
+            <span>CASH PRIZES</span>
+          </div>
+          <div class="prize-list">
+            <div class="prize-row"><strong>1st Prize</strong><span class="money">₹2,000</span></div>
+            <div class="prize-row"><strong>2nd Prize</strong><span class="money">₹1,500</span></div>
+            <div class="prize-row"><strong>3rd Prize</strong><span class="money">₹1,250</span></div>
+            <div class="prize-row"><strong>4th Prize</strong><span class="money">₹1,000</span></div>
+            <div class="prize-row"><strong>5th Prize</strong><span class="money">₹750</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= REGISTER PAGE ================= -->
+
+<div class="page" id="registerPage">
+  <div class="page-top">
+    <div class="container page-top-inner">
+      <div class="page-title">
+        REGISTRATION
+      </div>
+      <button class="back" onclick="closePage()">
+        <i class="fa-solid fa-arrow-left"></i>
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container form-wrap">
+      <div class="form-card">
+        <div class="label">
+          EL NINO GREEN MARATHON 2026
+        </div>
+        <h2>REGISTER FOR THE RUN</h2>
+        <p class="form-desc">
+          Please enter your details carefully. Age will be calculated based on 11 October 2026.
+        </p>
+
+        <form onsubmit="registerSubmit(event)">
+          <div class="form-grid">
+            <div class="field">
+              <label>NAME</label>
+              <input type="text" placeholder="Enter full name" required>
+            </div>
+
+            <div class="field">
+              <label>DATE OF BIRTH</label>
+              <input type="date" id="dob" onchange="calculateAge()" required>
+            </div>
+
+            <div class="field">
+              <label>AGE</label>
+              <input type="number" id="age" placeholder="Auto calculated" readonly>
+            </div>
+
+            <div class="field">
+              <label>T-SHIRT SIZE</label>
+              <select required>
+                <option value="">Select size</option>
+                <option>24</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label>ADDRESS</label>
+              <textarea placeholder="Enter full address" required></textarea>
+            </div>
+
+            <div class="field">
+              <label>WHATSAPP NUMBER</label>
+              <input type="tel" placeholder="WhatsApp number" required>
+            </div>
+
+            <div class="field">
+              <label>MOBILE NUMBER</label>
+              <input type="tel" placeholder="Mobile number" required>
+            </div>
+
+            <div class="field full">
+              <label>MAIL ID</label>
+              <input type="email" placeholder="Email address" required>
+            </div>
+          </div>
+
+          <button class="submit" type="submit">
+            CONTINUE REGISTRATION
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- JavaScript Logic -->
+<script>
+
+/* OPEN & CLOSE PAGES */
+function openPage(id){
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
+  document.getElementById(id).classList.add("show");
+  document.body.style.overflow="hidden";
+  window.scrollTo(0,0);
+}
+
+function closePage(){
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
+  document.body.style.overflow="auto";
+  window.scrollTo(0,0);
+}
+
+/* PRIZE TABS */
+function switchPrize(id,button){
+  document.querySelectorAll(".prize-tab").forEach(tab => tab.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  button.classList.add("active");
+}
+
+/* AUTO AGE CALCULATION */
+function calculateAge(){
+  const dob=document.getElementById("dob").value;
+  if(!dob) return;
+
+  const birth=new Date(dob);
+  const eventDate=new Date("2026-10-11");
+
+  let age=eventDate.getFullYear()-birth.getFullYear();
+  const month=eventDate.getMonth()-birth.getMonth();
+
+  if(month<0 || (month===0 && eventDate.getDate()<birth.getDate())){
+    age--;
+  }
+  document.getElementById("age").value=age;
+}
+
+/* FORM SUBMIT */
+function registerSubmit(event){
+  event.preventDefault();
+  alert("Your details have been entered successfully. Registration confirmation and payment will be handled in the next step.");
+}
+
+/* MARATHON RACE DAY COUNTDOWN CLOCK */
+const raceDate = new Date('October 11, 2026 05:30:00').getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = raceDate - now;
+
+  if(diff > 0) {
+    document.getElementById('days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    document.getElementById('hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    document.getElementById('mins').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    document.getElementById('secs').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+  }
+}, 1000);
+
+</script>
+
+</body>
+</html>
