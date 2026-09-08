@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL NINO GREEN MARATHON 2026</title>
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --secondary: #81c784;
+      --dark: #1b5e20;
+      --accent: #fbc02d;
+      --light: #f1f8e9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f9fbf9; color: #333; line-height: 1.6; }
+    
+    /* Header */
+    header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); sticky: top; }
+    .logo-container { display: flex; align-items: center; gap: 10px; }
+    .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+    .event-date-badge { background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; text-align: center; padding: 80px 20px; }
+    .hero h1 { font-size: 2.8rem; color: #a5d6a7; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+    .key-details { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
+    .badge { background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 8px; backdrop-filter: blur(5px); }
+    
+    .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 12px 25px; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-accent { background: var(--accent); color: #333; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+    /* Countdown */
+    .countdown-box { margin-top: 30px; background: rgba(0,0,0,0.5); display: inline-block; padding: 15px 25px; border-radius: 10px; }
+    #timer { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+    /* Ticker */
+    .ticker { background: var(--dark); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-text { display: inline-block; animation: marquee 20s linear infinite; font-weight: bold; }
+    @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+    /* Sections */
+    .section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
+    .section-title { text-align: center; color: var(--primary); margin-bottom: 30px; font-size: 2rem; position: relative; }
+    
+    /* Benefits Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); text-align: center; border-bottom: 4px solid var(--primary); }
+
+    /* Categories Grid */
+    .category-card { background: white; border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: 0.3s; }
+    .category-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(46,125,50,0.15); }
+    .category-card h3 { color: var(--dark); }
+    .price { font-size: 1.4rem; color: var(--primary); font-weight: bold; margin: 10px 0; }
+
+    /* Modal */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; overflow-y: auto; }
+    .modal-content { background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; margin: 20px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; }
+
+    /* Form Styles */
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+
+    /* Tabs for Prizes */
+    .tab-btns { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+    .tab-btn { padding: 10px 20px; border: 1px solid var(--primary); background: white; color: var(--primary); cursor: pointer; border-radius: 5px; font-weight: bold; }
+    .tab-btn.active { background: var(--primary); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+    footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo">🌱 PASUMAI INGARANGAL</div>
+    </div>
+    <div class="event-date-badge">📅 11 OCT 2026</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>EL NINO GREEN MARATHON 2026</h1>
+    <p>Run For Nature & Green Future</p>
+    <div class="key-details">
+      <div class="badge">📍 Kaduvettipalayam, Annur, CBE</div>
+      <div class="badge">⏰ 05:30 AM Onwards</div>
+      <div class="badge">⚠️ Last Date: Oct 1</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#categories" class="btn btn-primary">REGISTER NOW →</a>
+      <button class="btn btn-accent" onclick="openPrizeModal()">PRIZE DETAILS 🏆</button>
+    </div>
+    <div class="countdown-box">
+      <div>Registration Closes In:</div>
+      <div id="timer">Loading...</div>
+    </div>
+  </section>
+
+  <!-- Running Ticker -->
+  <div class="ticker">
+    <div class="ticker-text">
+      RUN FOR HEALTH • RUN FOR NATURE • SAVE WATER & TREES • EL NINO GREEN MARATHON 2026 • 
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="section">
+    <h2 class="section-title">FITNESS WITH A PURPOSE</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+      EL NINO GREEN MARATHON 2026 is a community-focused running event inspired by the environmental impact of climate change, water conservation, and the growing need for a greener future.
+      <br><br>
+      <i>(எல் நினோ பசுமை மாரத்தான் 2026 என்பது சுற்றுச்சூழல் விழிப்புணர்வு, நீர் சேமிப்பு மற்றும் பசுமையான எதிர்காலத்தை வலியுறுத்தி பசுமை ஐங்கரங்கள் அமைப்பால் நடத்தப்படும் ஒரு சமூகப் பேரணி ஆகும்.)</i>
+    </p>
+  </section>
+
+  <!-- Race Benefits -->
+  <section class="section" style="background: var(--light);">
+    <h2 class="section-title">Race Kit & Benefits</h2>
+    <div class="grid">
+      <div class="card">👕 Official T-Shirt</div>
+      <div class="card">🏅 Finisher Medal</div>
+      <div class="card">📜 Certificate</div>
+      <div class="card">🍱 Breakfast & Refreshments</div>
+      <div class="card">🩺 Medical Support</div>
+    </div>
+  </section>
+
+  <!-- Interactive Category Selector -->
+  <section class="section" id="categories">
+    <h2 class="section-title">Select Category to Register</h2>
+    <div class="grid">
+      <div class="category-card" onclick="selectCategory('Open Men (14 KM)', 500)">
+        <h3>Open Men</h3>
+        <p>14 KM</p>
+        <div class="price">₹500</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Women - 14+ Years (10 KM)', 500)">
+        <h3>Women (14+ Yrs)</h3>
+        <p>10 KM</p>
+        <div class="price">₹500</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Men - 45+ Years (10 KM)', 500)">
+        <h3>Men (45+ Yrs)</h3>
+        <p>10 KM</p>
+        <div class="price">₹500</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Men - 14+ Years (7 KM)', 450)">
+        <h3>Men (14+ Yrs)</h3>
+        <p>7 KM</p>
+        <div class="price">₹450</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Boys & Girls (12-14 Yrs)', 400)">
+        <h3>Boys & Girls (12-14 Yrs)</h3>
+        <p>4 KM</p>
+        <div class="price">₹400</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Boys & Girls (10-12 Yrs)', 400)">
+        <h3>Boys & Girls (10-12 Yrs)</h3>
+        <p>3 KM</p>
+        <div class="price">₹400</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Boys & Girls (8-10 Yrs)', 400)">
+        <h3>Boys & Girls (8-10 Yrs)</h3>
+        <p>2 KM</p>
+        <div class="price">₹400</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+      <div class="category-card" onclick="selectCategory('Boys & Girls (Below 8 Yrs)', 400)">
+        <h3>Kids (Below 8 Yrs)</h3>
+        <p>1 KM</p>
+        <div class="price">₹400</div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form Modal -->
+  <div class="modal" id="regModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeRegModal()">&times;</span>
+      <h2 style="color: var(--primary); margin-bottom: 15px;">Runner Registration</h2>
+      <form id="marathonForm" onsubmit="handlePayment(event)">
+        <div class="form-group">
+          <label>Selected Category</label>
+          <input type="text" id="selectedCategory" readonly style="background: #eef;">
+        </div>
+        <div class="form-group">
+          <label>Entry Fee (₹)</label>
+          <input type="text" id="selectedFee" readonly style="background: #eef; font-weight: bold; color: green;">
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" required placeholder="Enter full name">
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="dob" required onchange="calculateAge()">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" readonly placeholder="Auto calculated">
+        </div>
+        <div class="form-group">
+          <label>T-Shirt Size</label>
+          <select required>
+            <option value="">Select Size</option>
+            <optgroup label="Kids Sizes">
+              <option>24</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option>
+            </optgroup>
+            <optgroup label="Adult Sizes">
+              <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number</label>
+          <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit number">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit number">
+        </div>
+        <div class="form-group">
+          <label>Email ID</label>
+          <input type="email" required placeholder="example@mail.com">
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" required placeholder="City / Address">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; font-size: 1.1rem;">
+          PAY VIA UPI (GPay / PhonePe) 📱
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Filterable Prize Modal -->
+  <div class="modal" id="prizeModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closePrizeModal()">&times;</span>
+      <h2 style="color: var(--primary); text-align: center; margin-bottom: 15px;">🏆 Prize & Cash Awards</h2>
+      
+      <div class="tab-btns">
+        <button class="tab-btn active" onclick="switchTab('adults')">Adult Categories</button>
+        <button class="tab-btn" onclick="switchTab('kids')">Kids Categories</button>
+      </div>
+
+      <!-- Adults Prizes -->
+      <div id="adults" class="tab-content active">
+        <h4>14 KM – Open Men</h4>
+        <p>1st: ₹16,000 | 2nd: ₹10,000 | 3rd: ₹7,500 | 4th: ₹5,000 | 5th: ₹3,500 | 6th: ₹2,500 | 7th: ₹1,500 | 8th-14th: ₹1,000</p><hr><br>
+        <h4>10 KM – 14+ Women</h4>
+        <p>1st: ₹10,000 | 2nd: ₹7,500 | 3rd: ₹5,000 | 4th: ₹3,500 | 5th: ₹2,500 | 6th: ₹1,500 | 7th-10th: ₹1,000</p><hr><br>
+        <h4>10 KM – 45+ Men</h4>
+        <p>1st: ₹10,000 | 2nd: ₹6,000 | 3rd: ₹5,000 | 4th: ₹3,000 | 5th: ₹2,000 | 6th-10th: ₹1,000</p><hr><br>
+        <h4>7 KM – Men (14+)</h4>
+        <p>1st: ₹7,000 | 2nd: ₹4,000 | 3rd: ₹3,000 | 4th: ₹2,000 | 5th: ₹1,500 | 6th-10th: ₹1,000</p>
+      </div>
+
+      <!-- Kids Prizes -->
+      <div id="kids" class="tab-content">
+        <h4>4 KM – 12-14 Yrs (Boys & Girls Separate)</h4>
+        <p>1st: ₹4,000 | 2nd: ₹2,750 | 3rd: ₹2,000 | 4th: ₹1,500 | 5th: ₹1,000</p><hr><br>
+        <h4>3 KM – 10-12 Yrs (Boys & Girls Separate)</h4>
+        <p>1st: ₹3,000 | 2nd: ₹2,000 | 3rd: ₹1,500 | 4th: ₹1,250 | 5th: ₹1,000</p><hr><br>
+        <h4>2 KM – 8-10 Yrs (Boys & Girls Separate)</h4>
+        <p>1st: ₹2,500 | 2nd: ₹2,000 | 3rd: ₹1,500 | 4th: ₹1,250 | 5th: ₹1,000</p><hr><br>
+        <h4>1 KM – Below 8 Yrs (Boys & Girls Separate)</h4>
+        <p>1st: ₹2,000 | 2nd: ₹1,500 | 3rd: ₹1,250 | 4th: ₹1,000 | 5th: ₹750</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 EL NINO GREEN MARATHON. Organized by PASUMAI INGARANGAL.</p>
+    <p>Kaduvettipalayam, Annur, Coimbatore, Tamil Nadu.</p>
+    <p>📞 Contact: 9597735733 / 9597834694</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Config: Put your UPI ID here
+    const UPI_ID = "9597735733@paytm"; // Change to your actual GooglePay/PhonePe UPI ID
+
+    // Select Category & Open Modal
+    function selectCategory(catName, fee) {
+      document.getElementById('selectedCategory').value = catName;
+      document.getElementById('selectedFee').value = fee;
+      document.getElementById('regModal').style.display = 'flex';
+    }
+
+    function closeRegModal() { document.getElementById('regModal').style.display = 'none'; }
+    function openPrizeModal() { document.getElementById('prizeModal').style.display = 'flex'; }
+    function closePrizeModal() { document.getElementById('prizeModal').style.display = 'none'; }
+
+    // Auto Calculate Age from DOB
+    function calculateAge() {
+      const dob = new Date(document.getElementById('dob').value);
+      const diff_ms = Date.now() - dob.getTime();
+      const age_dt = new Date(diff_ms);
+      const calculatedAge = Math.abs(age_dt.getUTCFullYear() - 1970);
+      document.getElementById('age').value = calculatedAge;
+    }
+
+    // Tab Switching for Prizes
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    // Dynamic Dynamic UPI Payment Redirection
+    function handlePayment(e) {
+      e.preventDefault();
+      const fee = document.getElementById('selectedFee').value;
+      const category = document.getElementById('selectedCategory').value;
+      
+      // UPI Deep Link Format
+      const upiUrl = `upi://pay?pa=${UPI_ID}&pn=PASUMAI_INGARANGAL&tn=Marathon_${category.replace(/\s+/g, '_')}&am=${fee}&cu=INR`;
+      
+      // Redirect to Mobile UPI Apps
+      window.location.href = upiUrl;
+    }
+
+    // Live Countdown Clock (Target: Oct 1, 2026)
+    const countDownDate = new Date("Oct 1, 2026 23:59:59").getTime();
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000Neenga ketta ellame super-aana features! Single `index.html` file-la neenga ketta **Category Selection, Auto Age Calculation, Dynamic UPI Link, Filterable Prize Modal, Live Countdown Clock** ellam sethu Ready-to-Use Code thandhuruken.
+
+Itha neenga அப்படியே GitHub Repository-la `index.html`-a save panni **GitHub Pages** mulama live akkalam.
+
+---
+
+### Complete Single-File Code (`index.html`)
+
+```html
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL NINO GREEN MARATHON 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)">
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- 1. Header -->
+    <header class="bg-emerald-800 text-white py-3 px-4 shadow-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-2">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-2 rounded-full text-emerald-800 font-bold text-xl">🌱</div>
+                <div>
+                    <p class="text-xs text-emerald-200 uppercase tracking-wider">Organized By</p>
+                    <h1 class="font-bold text-lg leading-tight">PASUMAI INGARANGAL (பசுமை ஐங்கரங்கள்)</h1>
+                </div>
+            </div>
+            <div class="bg-emerald-900 px-3 py-1 rounded-full text-xs font-semibold text-emerald-100">
+                📅 Event Date: 11 OCTOBER 2026 (SUNDAY)
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Running Ticker -->
+    <div class="bg-emerald-600 text-white text-sm py-2 overflow-hidden border-b border-emerald-700">
+        <div class="animate-marquee font-semibold tracking-wide">
+            🌱 RUN FOR HEALTH • RUN FOR NATURE • SAVE WATER & TREES • EL NINO GREEN MARATHON 2026 • REGISTRATION ENDS OCT 1 🏃‍♂️
+        </div>
+    </div>
+
+    <!-- 2. Hero Section -->
+    <section class="relative bg-gradient-to-b from-emerald-900 to-emerald-800 text-white py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-4 py-1 rounded-full text-sm font-semibold uppercase">
+                Run For Nature & Green Future
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                EL NINO GREEN MARATHON 2026
+            </h1>
+            <p class="text-emerald-100 text-base sm:text-lg max-w-2xl mx-auto">
+                📍 Kaduvettipalayam, Annur, Coimbatore | ⏰ 05:30 AM Onwards
+            </p>
+
+            <!-- Countdown Timer -->
+            <div class="bg-emerald-950/50 backdrop-blur-md border border-emerald-500/30 p-4 rounded-xl max-w-md mx-auto my-6">
+                <p class="text-xs uppercase tracking-wider text-emera
