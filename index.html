@@ -1,0 +1,178 @@
+<script>
+/* PAGE MODALS */
+function openPage(pageId){
+  const page = document.getElementById(pageId);
+  if(page){
+    page.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closePage(pageId){
+  const page = document.getElementById(pageId);
+  if(page){
+    page.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+}
+
+function openGoogleMaps(){
+  window.open(
+    "https://www.google.com/maps/search/?api=1&query=K+K+Vidhyalaya+Matric+Higher+Secondary+School%2C+Kaduvettipalayam%2C+Annur%2C+Coimbatore%2C+Tamil+Nadu",
+    "_blank"
+  );
+}
+
+/* COUNTDOWN TIMER */
+const eventDate = new Date("October 11, 2026 05:30:00").getTime();
+
+function countdown(){
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  if(distance <= 0){
+    if(daysEl) daysEl.innerText = "00";
+    if(hoursEl) hoursEl.innerText = "00";
+    if(minutesEl) minutesEl.innerText = "00";
+    if(secondsEl) secondsEl.innerText = "00";
+    return;
+  }
+
+  if(daysEl) daysEl.innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+  if(hoursEl) hoursEl.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  if(minutesEl) minutesEl.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  if(secondsEl) secondsEl.innerText = Math.floor((distance % (1000 * 60)) / 1000);
+}
+
+countdown();
+setInterval(countdown, 1000);
+
+/* PRIZE TABS */
+function showPrize(type, button){
+  const adultsSection = document.getElementById("adults");
+  const kidsSection = document.getElementById("kids");
+
+  if(adultsSection) adultsSection.style.display = type === "adults" ? "block" : "none";
+  if(kidsSection) kidsSection.style.display = type === "kids" ? "block" : "none";
+
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  if(button) button.classList.add("active");
+}
+
+/* AGE CALCULATOR */
+function calculateAge(){
+  const dobValue = document.getElementById("dob") ? document.getElementById("dob").value : null;
+  const ageInput = document.getElementById("age");
+  
+  if(!dobValue || !ageInput) return;
+
+  const dob = new Date(dobValue);
+  const event = new Date("2026-10-11");
+
+  let age = event.getFullYear() - dob.getFullYear();
+  const month = event.getMonth() - dob.getMonth();
+
+  if(month < 0 || (month === 0 && event.getDate() < dob.getDate())){
+    age--;
+  }
+
+  if(age < 0){
+    ageInput.value = "";
+    return;
+  }
+
+  ageInput.value = age + " years";
+  updateCategories();
+}
+
+/* CATEGORY & FEE DYNAMIC UPDATE */
+function updateCategories(){
+  const genderEl = document.getElementById("gender");
+  const dobEl = document.getElementById("dob");
+  const categoryEl = document.getElementById("category");
+
+  if(!genderEl || !dobEl || !categoryEl) return;
+
+  const gender = genderEl.value;
+  const dobValue = dobEl.value;
+
+  categoryEl.innerHTML = '<option value="">Select category</option>';
+
+  if(!gender || !dobValue) return;
+
+  const dob = new Date(dobValue);
+  const event = new Date("2026-10-11");
+
+  let age = event.getFullYear() - dob.getFullYear();
+  const month = event.getMonth() - dob.getMonth();
+
+  if(month < 0 || (month === 0 && event.getDate() < dob.getDate())) age--;
+
+  function addOption(text, fee){
+    const option = document.createElement("option");
+    option.value = text;
+    option.textContent = text + " — ₹" + fee;
+    option.dataset.fee = fee;
+    categoryEl.appendChild(option);
+  }
+
+  if(age < 0) return;
+
+  if(age < 8){
+    if(gender === "male") addOption("1 KM - Boys (Below 8 Years)", 300);
+    if(gender === "female") addOption("1 KM - Girls (Below 8 Years)", 300);
+  } else if(age >= 8 && age < 10){
+    if(gender === "male") addOption("2 KM - Boys (8-10 Years)", 350);
+    if(gender === "female") addOption("2 KM - Girls (8-10 Years)", 350);
+  } else if(age >= 10 && age < 12){
+    if(gender === "male") addOption("3 KM - Boys (10-12 Years)", 400);
+    if(gender === "female") addOption("3 KM - Girls (10-12 Years)", 400);
+  } else if(age >= 12 && age < 14){
+    if(gender === "male") addOption("4 KM - Boys (12-14 Years)", 450);
+    if(gender === "female") addOption("4 KM - Girls (12-14 Years)", 450);
+  } else if(age >= 14 && age < 45){
+    if(gender === "male"){
+      addOption("14 KM - Open Men", 600);
+      addOption("7 KM - Men (14+)", 500);
+    }
+    if(gender === "female"){
+      addOption("10 KM - 14+ Women", 550);
+    }
+  } else if(age >= 45){
+    if(gender === "male"){
+      addOption("14 KM - Open Men", 600);
+      addOption("10 KM - 45+ Men", 550);
+      addOption("7 KM - Men (14+)", 500);
+    }
+    if(gender === "female"){
+      addOption("10 KM - 14+ Women", 550);
+    }
+  }
+  updateFee();
+}
+
+function updateFee(){
+  const category = document.getElementById("category");
+  const feeSpan = document.getElementById("fee");
+  if(!category || !feeSpan) return;
+
+  const selectedOption = category.options[category.selectedIndex];
+
+  if(selectedOption && selectedOption.dataset.fee){
+    feeSpan.textContent = "₹" + selectedOption.dataset.fee;
+  } else {
+    feeSpan.textContent = "Select a category";
+  }
+}
+
+/* FORM SUBMISSION */
+function submitRegistration(event){
+  event.preventDefault();
+  alert("Registration submitted successfully!");
+}
+</script>
