@@ -816,7 +816,10 @@
       }
     }
 
-    // PAYMENT & REGISTRATION PROCESS
+    //
+   // PAYMENT & REGISTRATION PROCESS (UPDATED WITH GOOGLE APPS SCRIPT)
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxXjJ-lkt2-LTpVP0JGNU0hkimbwsqxm1nNtKKASbeHb2hHhJAObL5MkUHOwPwMqu1V2g/exec";
+
     function handleRegistration(e) {
       e.preventDefault();
 
@@ -849,14 +852,30 @@
         "name": "El Nino Green Marathon 2026",
         "description": regData.category + " Registration",
         "handler": function (response) {
-          const regId = "ENGM-" + Math.floor(1000 + Math.random() * 9000);
           
-          alert("Payment Successful! Your Registration ID is: " + regId);
+          // Add Payment ID to the data payload
+          regData.paymentId = response.razorpay_payment_id;
 
-          // WHATSAPP REDIRECTION WITH RECEIPT PRE-FILLED TEXT
-          const waMessage = `Hello Pasumai Ingarangal,%0A%0AI have registered for El Nino Green Marathon 2026!%0A%0A*Registration Details:*%0A• Reg ID: ${regId}%0A• Name: ${regData.name}%0A• Category: ${regData.category}%0A• Fee Paid: ₹${regData.fee}%0A• Payment ID: ${response.razorpay_payment_id}%0A%0AAttaching my payment screenshot below.`;
-          
-          window.location.href = `https://wa.me/919597735733?text=${waMessage}`;
+          // Send Data to Google Sheet & Trigger Email Notification
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(regData)
+          })
+          .then(() => {
+            alert("Payment Successful!\nPayment ID: " + response.razorpay_payment_id + "\n\nYour registration details have been saved, and a confirmation email with your Registration ID has been sent!");
+
+            // WHATSAPP REDIRECTION TO HELPLINE (9597735733)
+            const waMessage = `Hello Pasumai Ingarangal,%0A%0AI have registered for El Nino Green Marathon 2026!%0A%0A*Registration Details:*%0A• Name: ${encodeURIComponent(regData.name)}%0A• Category: ${encodeURIComponent(regData.category)}%0A• Fee Paid: ₹${regData.fee}%0A• Payment ID: ${response.razorpay_payment_id}%0A%0AAttaching my payment screenshot below.`;
+            
+            window.location.href = `https://wa.me/919597735733?text=${waMessage}`;
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("Payment recorded, but a network error occurred while updating Google Sheets.");
+          });
+
         },
         "prefill": {
           "name": regData.name,
@@ -869,6 +888,7 @@
       const rzp = new Razorpay(options);
       rzp.open();
     }
+    
   </script>
 </body>
 </html>
