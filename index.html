@@ -1,263 +1,874 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Nino Green Marathon 2026</title>
-    <!-- Razorpay Checkout SDK -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #2e7d32;
-            padding-bottom: 15px;
-        }
-        .header h1 {
-            color: #2e7d32;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        .header p {
-            color: #666;
-            font-size: 14px;
-        }
-        .event-details {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        .event-details p {
-            margin-bottom: 5px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 15px;
-        }
-        input:focus, select:focus {
-            border-color: #2e7d32;
-            outline: none;
-        }
-        .price-box {
-            background: #fff3e0;
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: bold;
-            color: #e65100;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        button {
-            width: 100%;
-            background-color: #2e7d32;
-            color: white;
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background-color: #1b5e20;
-        }
-        .footer-note {
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-            margin-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Nino Green Marathon 2026 | Pasumai Ingarangal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Razorpay Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <style>
+    :root {
+      --primary: #1b4d3e;
+      --primary-light: #2d7a63;
+      --accent: #27ae60;
+      --gold: #f39c12;
+      --dark: #1e272e;
+      --light: #f8f9fa;
+      --danger: #e74c3c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER & BRANDING */
+    header {
+      background: linear-gradient(135deg, var(--primary), #0a261c);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .brand-logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    .event-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0.3rem 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: #e0e0e0;
+      font-weight: 400;
+    }
+
+    /* TICKER */
+    .ticker-wrap {
+      width: 100%;
+      background: var(--dark);
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .ticker {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translate3d(100%, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+
+    /* HERO SECTION & ESSENTIALS */
+    .hero-container {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .meta-item {
+      background: #eef7f4;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: var(--primary);
+    }
+
+    /* COUNTDOWN TIMER */
+    .countdown-title {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .time-box {
+      background: var(--primary);
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 65px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .time-box small {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .urgency-alert {
+      background: #fce4e4;
+      color: var(--danger);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-block;
+    }
+
+    /* ACTION BUTTONS */
+    .nav-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-register {
+      background: var(--accent);
+      color: white;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+
+    .btn-prizes {
+      background: var(--gold);
+      color: white;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+
+    .btn-location {
+      background: var(--primary-light);
+      color: white;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    /* ABOUT & BENEFITS */
+    .section-title {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: #444;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+
+    .benefit-card h4 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .benefit-card p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* MODAL OVERLAYS */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px 10px;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 700px;
+      margin: 20px auto;
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #888;
+    }
+
+    /* CASH PRIZE TABS */
+    .tab-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .prize-category {
+      margin-bottom: 1.5rem;
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .prize-category h4 {
+      color: var(--primary);
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .prize-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+
+    .prize-list li {
+      background: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    /* REGISTRATION FORM */
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .fee-display {
+      background: #eef7f4;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px dashed var(--accent);
+      margin-top: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>El Nino Green Marathon 2026</h1>
-        <p>Organized by Pasumai Ingarangal</p>
+  <!-- HEADER -->
+  <header>
+    <div class="brand-logo">🌿 PASUMAI INGARANGAL</div>
+    <h1 class="event-title">EL NINO GREEN MARATHON 2026</h1>
+    <p class="tagline">RUN FOR FITNESS • RUN FOR NATURE</p>
+  </header>
+
+  <!-- RUNNING TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      🏃 EL NINO GREEN MARATHON 2026 • 🌿 PASUMAI INGARANGAL • 📅 OCTOBER 11, 2026 • RUN FOR FITNESS, RUN FOR NATURE • ⚠️ REGISTRATION CLOSES OCT 03, 2026 • 🏃 REGISTER NOW!
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="hero-container">
+    
+    <!-- EVENT ESSENTIALS & TIMER CARD -->
+    <div class="info-card">
+      <div class="event-meta">
+        <div class="meta-item">📅 Sunday, 11th Oct 2026</div>
+        <div class="meta-item">⏰ 5:30 AM Onwards</div>
+        <div class="meta-item">📍 K K Vidhyalaya School, Coimbatore</div>
+      </div>
+
+      <div class="countdown-title">TIME REMAINING FOR REGISTRATION</div>
+      <div class="timer">
+        <div class="time-box"><span id="days">00</span><small>Days</small></div>
+        <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+        <div class="time-box"><span id="mins">00</span><small>Mins</small></div>
+        <div class="time-box"><span id="secs">00</span><small>Secs</small></div>
+      </div>
+
+      <div class="urgency-alert">⚠️ REGISTRATION CLOSES ON: OCTOBER 03, 2026</div>
     </div>
 
-    <div class="event-details">
-        <p>📅 <strong>Date:</strong> October 11, 2026</p>
-        <p>📍 <strong>Venue:</strong> K K Vidhyalaya School, Coimbatore</p>
+    <!-- ACTION NAVIGATION BUTTONS -->
+    <div class="nav-actions">
+      <button class="btn btn-register" onclick="openModal('registerModal')">🏃 REGISTER NOW</button>
+      <button class="btn btn-prizes" onclick="openModal('prizesModal')">🏆 CASH PRIZES</button>
+      <a href="https://maps.google.com/?q=K+K+Vidhyalaya+Matric+Higher+Secondary+School+Kaduvettipalayam+Annur+Coimbatore" target="_blank" class="btn btn-location">📍 LOCATION</a>
     </div>
 
-    <form id="registrationForm" onsubmit="handlePaymentAndRegister(event)">
-        <div class="form-group">
-            <label for="name">Full Name / முழு பெயர் *</label>
-            <input type="text" id="name" required placeholder="Enter your full name">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email Address / மின்னஞ்சல் *</label>
-            <input type="email" id="email" required placeholder="Enter your email">
-        </div>
-
-        <div class="form-group">
-            <label for="phone">Phone Number (WhatsApp) / மொபைல் எண் *</label>
-            <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="10 Digit Mobile Number">
-        </div>
-
-        <div class="form-group">
-            <label for="age">Age / வயது *</label>
-            <input type="number" id="age" min="5" max="100" required placeholder="Enter your age">
-        </div>
-
-        <div class="form-group">
-            <label for="gender">Gender / பாலினம் *</label>
-            <select id="gender" required>
-                <option value="">Select Gender</option>
-                <option value="Male">Male / ஆண்</option>
-                <option value="Female">Female / பெண்</option>
-                <option value="Other">Other / இதர</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="distance">Category / பிரிவு *</label>
-            <select id="distance" required>
-                <option value="3KM Run">3 KM Run</option>
-                <option value="5KM Run">5 KM Run</option>
-                <option value="10KM Run">10 KM Run</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="tshirt">T-Shirt Size / டி-ஷர்ட் அளவு *</label>
-            <select id="tshirt" required>
-                <option value="">Select T-Shirt Size</option>
-                <option value="S">S (36)</option>
-                <option value="M">M (38)</option>
-                <option value="L">L (40)</option>
-                <option value="XL">XL (42)</option>
-                <option value="XXL">XXL (44)</option>
-            </select>
-        </div>
-
-        <div class="price-box">
-            Registration Fee: ₹450
-        </div>
-
-        <button type="submit" id="submitBtn">PROCEED TO PAYMENT</button>
-    </form>
-
-    <div class="footer-note">
-        Payment secured by Razorpay. Auto-confirmation via Email & WhatsApp after payment.
+    <!-- ABOUT SECTION -->
+    <div class="info-card">
+      <h3 class="section-title">ABOUT THE MARATHON</h3>
+      <p class="about-text">
+        EL NINO GREEN MARATHON 2026 is a premier eco-friendly athletic event organized by Pasumai Ingarangal to raise global awareness on environmental conservation, climate change, and sustainable living. Inspired by the severe weather impacts of El Niño, this event blends physical endurance with social purpose. Whether you are an elite athlete, a recreational runner, or a young participant, step onto the track to advocate for tree plantation, water preservation, and a greener future.
+      </p>
     </div>
-</div>
 
-<script>
-    // ⚠️ கீழே உள்ள இந்த URL-ல் உன்னோட Google Apps Script Web App URL-ஐ ரீப்ளேஸ் பண்ணு
-    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+    <!-- PARTICIPANT BENEFITS -->
+    <div class="info-card">
+      <h3 class="section-title">MORE THAN JUST A RUN</h3>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h4>👕 Official Event T-Shirt</h4>
+          <p>Premium breathable runner's T-Shirt.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>🏅 Finisher Medal</h4>
+          <p>High-quality commemorative finisher medal.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>📜 Official Certificate</h4>
+          <p>Official Certificate of Completion & Participation.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>🍱 Breakfast & Refreshments</h4>
+          <p>Healthy post-run breakfast, energy drinks, and hydration points.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>🚑 Medical & First-Aid</h4>
+          <p>Ambulances and medical stations across the track for safety.</p>
+        </div>
+      </div>
+    </div>
 
-    function handlePaymentAndRegister(event) {
-        event.preventDefault();
+  </div>
 
-        const btn = document.getElementById('submitBtn');
-        btn.disabled = true;
-        btn.innerText = "Processing Payment...";
+  <!-- PAGE B: CASH PRIZES MODAL -->
+  <div id="prizesModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('prizesModal')">&times;</span>
+      <h3 class="section-title">CASH PRIZE DETAILS</h3>
+      
+      <!-- TABS SWITCHER -->
+      <div class="tab-container">
+        <button class="tab-btn active" onclick="switchTab('adultTab', this)">🏆 ADULT CATEGORIES</button>
+        <button class="tab-btn" onclick="switchTab('kidsTab', this)">👦👧 KIDS CATEGORIES</button>
+      </div>
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            age: document.getElementById('age').value,
-            gender: document.getElementById('gender').value,
-            tshirt: document.getElementById('tshirt').value,
-            distance: document.getElementById('distance').value
-        };
+      <!-- TAB 1: ADULTS -->
+      <div id="adultTab" class="tab-content active">
+        <div class="prize-category">
+          <h4>14 KM – OPEN MEN</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹16,000</li>
+            <li><b>2nd:</b> ₹10,000</li>
+            <li><b>3rd:</b> ₹7,500</li>
+            <li><b>4th:</b> ₹5,000</li>
+            <li><b>5th:</b> ₹3,500</li>
+            <li><b>6th:</b> ₹2,500</li>
+            <li><b>7th:</b> ₹1,500</li>
+            <li><b>8th:</b> ₹1,000</li>
+            <li><b>9th:</b> ₹1,000</li>
+            <li><b>10th:</b> ₹1,000</li>
+            <li><b>11th:</b> ₹1,000</li>
+            <li><b>12th:</b> ₹1,000</li>
+            <li><b>13th:</b> ₹1,000</li>
+            <li><b>14th:</b> ₹1,000</li>
+          </ul>
+        </div>
 
-        const options = {
-            "key": "rzp_live_Tck0CfQHjRBsYh", // Live Key ID
-            "amount": 45000, // ₹450 (in paise)
-            "currency": "INR",
-            "name": "El Nino Green Marathon 2026",
-            "description": "Registration Fee - " + formData.distance,
-            "handler": function (response) {
-                // 100% Payment Success ஆன பிறகு மட்டுமே இது இயங்கும்
-                formData.paymentId = response.razorpay_payment_id;
-                
-                btn.innerText = "Saving Registration...";
+        <div class="prize-category">
+          <h4>10 KM – 14+ WOMEN</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹10,000</li>
+            <li><b>2nd:</b> ₹7,500</li>
+            <li><b>3rd:</b> ₹5,000</li>
+            <li><b>4th:</b> ₹3,500</li>
+            <li><b>5th:</b> ₹2,500</li>
+            <li><b>6th:</b> ₹1,500</li>
+            <li><b>7th:</b> ₹1,000</li>
+            <li><b>8th:</b> ₹1,000</li>
+            <li><b>9th:</b> ₹1,000</li>
+            <li><b>10th:</b> ₹1,000</li>
+          </ul>
+        </div>
 
-                fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(formData)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if(data.status === "success") {
-                        alert("🎉 Registration Successful!\nYour Registration ID: " + data.regId + "\nConfirmation email & WhatsApp link sent!");
-                        
-                        // பேமெண்ட் முடிந்ததும் வாட்ஸ்அப்பிலும் தானாகவே கன்பர்மேஷன் மெசேஜ் ஓபன் ஆகும்
-                        const waMsg = `Hi Team, I registered for El Nino Green Marathon 2026.%0A*Reg ID:* ${data.regId}%0A*Name:* ${formData.name}%0A*Payment ID:* ${formData.paymentId}`;
-                        window.location.href = `https://wa.me/917904486274?text=${waMsg}`;
-                    } else {
-                        alert("Error saving data: " + data.message);
-                        btn.disabled = false;
-                        btn.innerText = "PROCEED TO PAYMENT";
-                    }
-                })
-                .catch(err => {
-                    alert("Network Error! Please contact support with Payment ID: " + formData.paymentId);
-                    btn.disabled = false;
-                    btn.innerText = "PROCEED TO PAYMENT";
-                });
-            },
-            "modal": {
-                "ondismiss": function() {
-                    btn.disabled = false;
-                    btn.innerText = "PROCEED TO PAYMENT";
-                }
-            },
-            "prefill": {
-                "name": formData.name,
-                "email": formData.email,
-                "contact": formData.phone
-            },
-            "theme": {
-                "color": "#2e7d32"
-            }
-        };
+        <div class="prize-category">
+          <h4>10 KM – 50+ MEN</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹10,000</li>
+            <li><b>2nd:</b> ₹6,000</li>
+            <li><b>3rd:</b> ₹5,000</li>
+            <li><b>4th:</b> ₹3,000</li>
+            <li><b>5th:</b> ₹2,000</li>
+            <li><b>6th:</b> ₹1,000</li>
+            <li><b>7th:</b> ₹1,000</li>
+            <li><b>8th:</b> ₹1,000</li>
+            <li><b>9th:</b> ₹1,000</li>
+            <li><b>10th:</b> ₹1,000</li>
+          </ul>
+        </div>
 
-        const rzp1 = new Razorpay(options);
-        rzp1.open();
+        <div class="prize-category">
+          <h4>7 KM – MEN 14+</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹7,000</li>
+            <li><b>2nd:</b> ₹4,000</li>
+            <li><b>3rd:</b> ₹3,000</li>
+            <li><b>4th:</b> ₹2,000</li>
+            <li><b>5th:</b> ₹1,500</li>
+            <li><b>6th:</b> ₹1,000</li>
+            <li><b>7th:</b> ₹1,000</li>
+            <li><b>8th:</b> ₹1,000</li>
+            <li><b>9th:</b> ₹1,000</li>
+            <li><b>10th:</b> ₹1,000</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TAB 2: KIDS -->
+      <div id="kidsTab" class="tab-content">
+        <div class="prize-category">
+          <h4>4 KM – BOYS & GIRLS (12–14 Yrs)</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹4,000</li>
+            <li><b>2nd:</b> ₹2,750</li>
+            <li><b>3rd:</b> ₹2,000</li>
+            <li><b>4th:</b> ₹1,500</li>
+            <li><b>5th:</b> ₹1,000</li>
+          </ul>
+        </div>
+
+        <div class="prize-category">
+          <h4>3 KM – BOYS & GIRLS (10–12 Yrs)</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹3,000</li>
+            <li><b>2nd:</b> ₹2,000</li>
+            <li><b>3rd:</b> ₹1,500</li>
+            <li><b>4th:</b> ₹1,250</li>
+            <li><b>5th:</b> ₹1,000</li>
+          </ul>
+        </div>
+
+        <div class="prize-category">
+          <h4>2 KM – BOYS & GIRLS (8–10 Yrs)</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹2,500</li>
+            <li><b>2nd:</b> ₹2,000</li>
+            <li><b>3rd:</b> ₹1,500</li>
+            <li><b>4th:</b> ₹1,250</li>
+            <li><b>5th:</b> ₹1,000</li>
+          </ul>
+        </div>
+
+        <div class="prize-category">
+          <h4>1 KM – BOYS & GIRLS (Below 8 Yrs)</h4>
+          <ul class="prize-list">
+            <li><b>1st:</b> ₹2,000</li>
+            <li><b>2nd:</b> ₹1,500</li>
+            <li><b>3rd:</b> ₹1,250</li>
+            <li><b>4th:</b> ₹1,000</li>
+            <li><b>5th:</b> ₹750</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PAGE C: ONLINE REGISTRATION FORM MODAL -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
+      <h3 class="section-title">ONLINE REGISTRATION FORM</h3>
+      
+      <form id="regForm" onsubmit="handleRegistration(event)">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="fullName" class="form-control" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label>Gender *</label>
+          <select id="gender" class="form-control" required onchange="filterCategories()">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Date of Birth (DOB) *</label>
+          <input type="date" id="dob" class="form-control" required onchange="filterCategories()">
+        </div>
+
+        <div class="form-group">
+          <label>Race Category *</label>
+          <select id="category" class="form-control" required onchange="updateFeeDisplay()">
+            <option value="">-- Please Select Gender & DOB First --</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="feeBox" style="display: none;">
+          <label>Registration Fee</label>
+          <div class="fee-display" id="feeAmountDisplay">₹0</div>
+        </div>
+
+        <div class="form-group">
+          <label>T-Shirt Size *</label>
+          <select id="tshirt" class="form-control" required>
+            <option value="">Select T-Shirt Size</option>
+            <option value="24">24</option>
+            <option value="26">26</option>
+            <option value="28">28</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number *</label>
+          <input type="tel" id="contact" class="form-control" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit mobile number">
+        </div>
+
+        <div class="form-group">
+          <label>WhatsApp Number *</label>
+          <input type="tel" id="whatsapp" class="form-control" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit WhatsApp number">
+          <div class="checkbox-group">
+            <input type="checkbox" id="sameNum" onchange="copyContactNumber()">
+            <label for="sameNum" style="font-weight: normal; margin: 0;">Same as Contact Number</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="email" class="form-control" required placeholder="example@email.com">
+        </div>
+
+        <button type="submit" class="btn btn-register" style="width: 100%; margin-top: 10px;">PROCEED TO PAYMENT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><b>Organized By:</b> Pasumai Ingarangal 🌿</p>
+    <p>Karuvalur, Coimbatore, Tamil Nadu</p>
+    <p style="margin-top: 10px;">
+      📱 WhatsApp Helpline: <a href="https://wa.me/919597735733">9597735733</a> | 
+      📞 Call: <a href="tel:9597834694">9597834694</a>
+    </p>
+    <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">© 2026 El Nino Green Marathon. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Live Razorpay API Keys
+    const RAZORPAY_KEY_ID = "rzp_live_Tck0CfQHjRBsYh";
+
+    // COUNTDOWN TIMER LOGIC
+    const eventDate = new Date("October 11, 2026 05:30:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff > 0) {
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+      }
+    }, 1000);
+
+    // MODAL CONTROL
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+    // CASH PRIZE TABS
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
     }
-</script>
 
+    // COPY CONTACT TO WHATSAPP
+    function copyContactNumber() {
+      if (document.getElementById("sameNum").checked) {
+        document.getElementById("whatsapp").value = document.getElementById("contact").value;
+      }
+    }
+
+    // STRICT AGE & GENDER CATEGORY FILTER
+    function filterCategories() {
+      const dobVal = document.getElementById("dob").value;
+      const genderVal = document.getElementById("gender").value;
+      const catSelect = document.getElementById("category");
+      
+      catSelect.innerHTML = '<option value="">Select Race Category</option>';
+      document.getElementById("feeBox").style.display = "none";
+
+      if (!dobVal || !genderVal) return;
+
+      const dob = new Date(dobVal);
+      const raceDay = new Date("2026-10-11");
+      let age = raceDay.getFullYear() - dob.getFullYear();
+      const m = raceDay.getMonth() - dob.getMonth();
+      if (m < 0 || (m === 0 && raceDay.getDate() < dob.getDate())) { age--; }
+
+      let options = [];
+
+      // Category logic mapping based on Age & Gender
+      if (genderVal === "Male") {
+        if (age >= 14) options.push({ name: "Open Men 14km", fee: 500 });
+        if (age >= 50) options.push({ name: "50+ Men 10km", fee: 500 });
+        if (age >= 14) options.push({ name: "14+ Men 7km", fee: 450 });
+      }
+
+      if (genderVal === "Female") {
+        if (age >= 14) options.push({ name: "14+ Women 10km", fee: 500 });
+      }
+
+      // Kids Categories (Both Boys & Girls)
+      if (age >= 12 && age <= 14) options.push({ name: "12–14 Yrs 4km", fee: 400 });
+      if (age >= 10 && age < 12) options.push({ name: "10–12 Yrs 3km", fee: 400 });
+      if (age >= 8 && age < 10) options.push({ name: "8–10 Yrs 2km", fee: 400 });
+      if (age < 8) options.push({ name: "Below 8 Yrs 1km", fee: 400 });
+
+      if (options.length === 0) {
+        catSelect.innerHTML = '<option value="">No eligible categories for selected age/gender</option>';
+      } else {
+        options.forEach(opt => {
+          const el = document.createElement("option");
+          el.value = opt.name;
+          el.setAttribute("data-fee", opt.fee);
+          el.textContent = opt.name;
+          catSelect.appendChild(el);
+        });
+      }
+    }
+
+    // UPDATE REGISTRATION FEE DISPLAY
+    function updateFeeDisplay() {
+      const catSelect = document.getElementById("category");
+      const selectedOpt = catSelect.options[catSelect.selectedIndex];
+      const fee = selectedOpt ? selectedOpt.getAttribute("data-fee") : null;
+
+      if (fee) {
+        document.getElementById("feeBox").style.display = "block";
+        document.getElementById("feeAmountDisplay").innerText = "Registration Fee: ₹" + fee;
+      } else {
+        document.getElementById("feeBox").style.display = "none";
+      }
+    }
+
+    // PAYMENT & REGISTRATION PROCESS
+    function handleRegistration(e) {
+      e.preventDefault();
+
+      const catSelect = document.getElementById("category");
+      const selectedOpt = catSelect.options[catSelect.selectedIndex];
+      const fee = selectedOpt.getAttribute("data-fee");
+
+      if (!fee) {
+        alert("Please select a valid Race Category!");
+        return;
+      }
+
+      const regData = {
+        name: document.getElementById("fullName").value,
+        gender: document.getElementById("gender").value,
+        dob: document.getElementById("dob").value,
+        category: catSelect.value,
+        fee: fee,
+        tshirt: document.getElementById("tshirt").value,
+        contact: document.getElementById("contact").value,
+        whatsapp: document.getElementById("whatsapp").value,
+        email: document.getElementById("email").value
+      };
+
+      // RAZORPAY INTEGRATION
+      const options = {
+        "key": RAZORPAY_KEY_ID,
+        "amount": parseInt(fee) * 100, // Amount in paise
+        "currency": "INR",
+        "name": "El Nino Green Marathon 2026",
+        "description": regData.category + " Registration",
+        "handler": function (response) {
+          const regId = "ENGM-" + Math.floor(1000 + Math.random() * 9000);
+          
+          alert("Payment Successful! Your Registration ID is: " + regId);
+
+          // WHATSAPP REDIRECTION WITH RECEIPT PRE-FILLED TEXT
+          const waMessage = `Hello Pasumai Ingarangal,%0A%0AI have registered for El Nino Green Marathon 2026!%0A%0A*Registration Details:*%0A• Reg ID: ${regId}%0A• Name: ${regData.name}%0A• Category: ${regData.category}%0A• Fee Paid: ₹${regData.fee}%0A• Payment ID: ${response.razorpay_payment_id}%0A%0AAttaching my payment screenshot below.`;
+          
+          window.location.href = `https://wa.me/919597735733?text=${waMessage}`;
+        },
+        "prefill": {
+          "name": regData.name,
+          "email": regData.email,
+          "contact": regData.contact
+        },
+        "theme": { "color": "#1b4d3e" }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
 </body>
 </html>
